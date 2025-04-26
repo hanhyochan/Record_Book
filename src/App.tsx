@@ -1,9 +1,10 @@
 import './App.css';
+import Button from './components/button/Button';
 
 function App() {
     return (
         <>
-            <h1 className="text-3xl font-bold underline text-red-500">Hello world!</h1>
+            <Button tag="primaryBtnLg">Primary Button Large</Button>
         </>
     );
 }
