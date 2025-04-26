@@ -17,3 +17,9 @@ const MobileWriteBtn = ({ onClick, children }: MobileWriteBtnProps) => {
 };
 
 export default MobileWriteBtn;
+
+{
+  /* <MobileWriteBtn>
+<img src="/icon/Pencil.svg" alt="연필 아이콘" width="24" height="24" />
+</MobileWriteBtn> */
+}

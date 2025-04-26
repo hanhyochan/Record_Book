@@ -1,14 +1,14 @@
 import { ReactNode } from 'react';
 
 interface PrimaryBtnProps {
-  tag: 'primaryBtnLg' | 'primaryBtnMd' | 'primaryBtnSm';
+  size: 'primaryBtnLg' | 'primaryBtnMd' | 'primaryBtnSm';
   onClick?: () => void;
   disabled?: boolean;
   children: ReactNode;
 }
 
 const PrimaryBtn = ({
-  tag: Tag = 'primaryBtnLg',
+  size: Size = 'primaryBtnLg',
   onClick,
   disabled = false,
   children,
@@ -28,7 +28,7 @@ const PrimaryBtn = ({
 
   return (
     <button
-      className={`${baseClasses[Tag]} ${disabled ? inactiveClasses : activeClasses}`}
+      className={`${baseClasses[Size] || ''} ${disabled ? inactiveClasses : activeClasses}`}
       onClick={onClick}
       disabled={disabled}
     >

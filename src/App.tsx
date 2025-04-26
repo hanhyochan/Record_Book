@@ -1,12 +1,10 @@
 import './App.css';
-import MobileWriteBtn from './components/button/MobileWriteBtn';
+import Input from './components/input/Input';
 
 function App() {
   return (
     <>
-      <MobileWriteBtn>
-        <img src="/icon/Pencil.svg" alt="연필 아이콘" width="24" height="24" />
-      </MobileWriteBtn>
+      <Input purpose="idInput" placeholder="아이디를 입력해주세요." />
     </>
   );
 }
