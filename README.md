@@ -66,4 +66,4 @@ export default tseslint.config({
 | chore    | 기타 변경 (빌드, 설정 등)      |
 
 ### 예시
-
+docs: README  커밋메시지 컨벤션 작성
