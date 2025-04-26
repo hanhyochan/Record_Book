@@ -1,12 +1,6 @@
 import useValidation from '../../hooks/useValidation';
 import { useState } from 'react';
-
-type PurposeType = 'idInput' | 'pwInput' | 'postTitleInput' | 'commentInput';
-
-interface InputProps {
-  purpose: PurposeType;
-  placeholder?: string;
-}
+import { InputProps } from '../../types/input';
 
 const Input = ({ purpose: Purpose = 'idInput', placeholder }: InputProps) => {
   const [value, setValue] = useState<string>('');
