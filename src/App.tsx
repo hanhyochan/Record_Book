@@ -1,5 +1,6 @@
 import './App.css';
 import PrimaryBtn from './components/button/PrimaryBtn';
+import WriteBtn from './components/button/WriteBtn';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <PrimaryBtn tag="primaryBtnSm" disabled={true}>
         등록
       </PrimaryBtn>
+      <WriteBtn>글쓰기</WriteBtn>
     </>
   );
 }

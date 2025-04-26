@@ -15,9 +15,9 @@ const PrimaryBtn = ({
 }: PrimaryBtnProps) => {
   // 기본 스타일
   const baseClasses = {
-    primaryBtnLg: 'w-[20rem] h-[5.9rem] rounded-[1.2rem] px-[2.4rem] py-[1.6rem]',
-    primaryBtnMd: 'w-[8.9rem] h-[5.2rem] rounded-[1.2rem] px-[2.4rem] py-[1.2rem]',
-    primaryBtnSm: 'w-[8.4rem] h-[4.8rem] rounded-[1.2rem] px-[2.4rem] py-4',
+    primaryBtnLg: 'w-[20rem] h-[5.9rem] font-bold rounded-[1.2rem] px-[2.4rem] py-[1.6rem]',
+    primaryBtnMd: 'w-[8.9rem] h-[5.2rem] font-bold rounded-[0.8rem] px-[2.4rem] py-[1.2rem]',
+    primaryBtnSm: 'w-[8.4rem] h-[4.8rem] font-bold rounded-[0.8rem] px-[2.4rem] py-[1.2rem]',
   };
 
   // 활성화 스타일
