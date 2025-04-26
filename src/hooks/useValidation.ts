@@ -6,11 +6,18 @@ const useValidation = ({ Purpose, value }: UseValidationProps) => {
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   const validate = () => {
-    // 인풋별 유효성 검사 함수 호출
-    const validateRule = validationRules[Purpose];
-    const error = validateRule(value);
+    if (Purpose) {
+      // 인풋별 유효성 검사 함수 호출
+      const validateRule = validationRules[Purpose];
+      const error = validateRule(value);
+      setErrorMessage(error);
+    } else {
+      // 게시글 유효성 검사 함수 호출
+      const validateRule = validationRules['postTextarea'];
+      const error = validateRule(value);
 
-    setErrorMessage(error);
+      setErrorMessage(error);
+    }
   };
 
   return { validate, errorMessage };

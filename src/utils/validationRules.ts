@@ -39,4 +39,11 @@ export const validationRules: Record<PurposeType, ValidationFunction> = {
     }
     return '';
   },
+
+  postTextarea: value => {
+    if (value.trim().length < 10) {
+      return '최소 10자 이상 입력해주세요.';
+    }
+    return '';
+  },
 };

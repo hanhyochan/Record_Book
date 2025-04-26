@@ -1,10 +1,10 @@
 import './App.css';
-import Input from './components/input/Input';
+import Textarea from './components/textarea/Textarea';
 
 function App() {
   return (
     <>
-      <Input purpose="idInput" placeholder="아이디를 입력해주세요." />
+      <Textarea placeholder="내용을 입력해주세요." />
     </>
   );
 }
