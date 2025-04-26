@@ -1,10 +1,10 @@
 import './App.css';
-import Default from './components/button/Default';
+import Button from './components/button/Button';
 
 function App() {
     return (
         <>
-            <Default>하이하이</Default>
+            <Button tag="primaryBtnLg">Primary Button Large</Button>
         </>
     );
 }
