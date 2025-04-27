@@ -1,10 +1,6 @@
-import useValidation from '../../hooks/useValidation';
+import useValidation from '../../../hooks/useValidation';
 import { useState } from 'react';
-// import { textareaProps } from '../../types/textarea';
-
-interface textareaProps {
-  placeholder: string;
-}
+import { textareaProps } from '../../../types/textarea';
 
 const Textarea = ({ placeholder }: textareaProps) => {
   const [value, setValue] = useState<string>('');

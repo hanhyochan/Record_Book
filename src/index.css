@@ -5,4 +5,11 @@
 body {
   font-size: 1.6rem;
   font-family: 'pretendard', sans-serif;
+  background-color: #f9fafa;
 }
+
+/* @theme {
+  --screen-desktop: 102.5rem;
+  --screen-tablet: 64.2rem;
+  --screen-mobile: 36rem;
+} */

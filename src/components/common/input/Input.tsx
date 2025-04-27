@@ -1,6 +1,6 @@
-import useValidation from '../../hooks/useValidation';
+import useValidation from '../../../hooks/useValidation';
 import { useState } from 'react';
-import { InputProps } from '../../types/input';
+import { InputProps } from '../../../types/input';
 
 const Input = ({ purpose: Purpose = 'idInput', placeholder }: InputProps) => {
   const [value, setValue] = useState<string>('');
