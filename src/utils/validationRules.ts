@@ -1,5 +1,5 @@
 import { PurposeType } from '../types/input';
-import { englishRegex } from './regex';
+import { idRegex, pwRegex } from './regex';
 
 type ValidationFunction = (value: string) => string;
 
@@ -9,8 +9,8 @@ export const validationRules: Record<PurposeType, ValidationFunction> = {
       return '아이디를 입력해주세요.';
     } else if (value.length < 4 || value.length > 12) {
       return '아이디를 4자 이상 12자 이하로 입력해주세요.';
-    } else if (!englishRegex.test(value)) {
-      return '아이디는 영문자만 입력 가능합니다.';
+    } else if (!idRegex.test(value)) {
+      return '아이디는 한글입력이 불가능합니다.';
     }
     return '';
   },
@@ -18,10 +18,10 @@ export const validationRules: Record<PurposeType, ValidationFunction> = {
   pwInput: value => {
     if (value.trim() === '') {
       return '비밀번호를 입력해주세요.';
-    } else if (value.length < 4 || value.length > 12) {
-      return '비밀번호를 4자 이상 12자 이하로 입력해주세요.';
-    } else if (!englishRegex.test(value)) {
-      return '비밀번호는 영문자만 입력 가능합니다.';
+    } else if (value.length < 8 || value.length > 12) {
+      return '비밀번호를 8자 이상 12자 이하로 입력해주세요.';
+    } else if (!pwRegex.test(value)) {
+      return '비밀번호는 영문+숫자 조합만 입력 가능합니다.';
     }
     return '';
   },

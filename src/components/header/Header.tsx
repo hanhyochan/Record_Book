@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react';
 import HamburgerMenu from './HamburgerMenu';
 import useUiState from '../../store/useUiState';
+import useAuth from '../../store/useAuth';
 
 const Header = () => {
+  // 햄버거 버튼 클릭 상태 관리
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isHamburgerMenuOpen = useUiState(state => state.isHamburgerMenuOpen);
   const toggleHamburgerMenu = useUiState(state => state.toggleHamburgerMenu);
   const setHamburgerMenuFalse = useUiState(state => state.setHamburgerMenuFalse);
+  // 로그인 여부
+  const { isLoggedIn } = useAuth();
 
   // 화면 너비 감지 함수
   const handleResize = () => {
@@ -36,7 +40,17 @@ const Header = () => {
           <p className="font-extrabold text-[2.4rem] leading-[160%] tracking-[-0.3%] align-middle">
             LOGO
           </p>
-          <button className="text-[1.8rem] font-semibold cursor-pointer">로그인</button>
+          {isLoggedIn ? (
+            <img
+              src="/icon/Profile.svg"
+              alt="유저아이콘"
+              width="38"
+              height="38"
+              className="cursor-pointer"
+            />
+          ) : (
+            <button className="text-[1.8rem] font-semibold cursor-pointer">로그인</button>
+          )}
         </>
       ) : (
         <>

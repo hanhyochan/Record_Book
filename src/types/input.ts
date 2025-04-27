@@ -10,6 +10,8 @@ export type PurposeType =
 export interface InputProps {
   purpose: PurposeType;
   placeholder?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
 }
 
 // 유효성 커스텀 훅 props
