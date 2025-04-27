@@ -11,6 +11,7 @@ const Header = () => {
   const setHamburgerMenuFalse = useUiState(state => state.setHamburgerMenuFalse);
   // 로그인 여부
   const { isLoggedIn } = useAuth();
+  const setPostWritePopupFalse = useUiState(state => state.setPostWritePopupFalse);
 
   // 화면 너비 감지 함수
   const handleResize = () => {
@@ -33,13 +34,20 @@ const Header = () => {
   // 모바일 햄버거 버튼 클릭 시
   const toggleHamburgerMenuOpen = () => toggleHamburgerMenu();
 
+  const navigateToHome = () => {
+    setPostWritePopupFalse();
+  };
+
   return (
     <div className="sticky top-0 z-100 flex h-[8.6rem] justify-between px-[1.6rem] min-[642px]:px-[3rem] min-[1025px]:px-[12rem] py-[2.4rem] shadow-[0px_9px_10px_0px_rgba(232,232,232,0.25)] border-b-[1px] border-solid border-[#EEEFF1] bg-white">
       {windowWidth >= 642 ? (
         <>
-          <p className="font-extrabold text-[2.4rem] leading-[160%] tracking-[-0.3%] align-middle">
-            LOGO
-          </p>
+          <img
+            src="/images/logo.png"
+            alt="다글제작소로고"
+            className="cursor-pointer"
+            onClick={navigateToHome}
+          />
           {isLoggedIn ? (
             <img
               src="/icon/Profile.svg"
