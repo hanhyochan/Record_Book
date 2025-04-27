@@ -1,12 +1,16 @@
 import './App.css';
-import Button from './components/button/Button';
+import Header from './components/header/Header';
+import PostPopup from './components/PostPopup';
 
 function App() {
-    return (
-        <>
-            <Button tag="primaryBtnLg">Primary Button Large</Button>
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <main>
+        <PostPopup />
+      </main>
+    </>
+  );
 }
 
 export default App;
