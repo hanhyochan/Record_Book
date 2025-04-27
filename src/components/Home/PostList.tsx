@@ -1,15 +1,19 @@
 import WriteBtn from '../common/button/WriteBtn';
 import useUiState from '../../store/useUiState';
+import { useEffect } from 'react';
 
 const PostList = () => {
-  const isPostWritePopupOpen = useUiState(state => state.isPostWritePopupOpen);
   const togglePostWritePopup = useUiState(state => state.togglePostWritePopup);
 
   const openWriteModal = () => {
-    if (!isPostWritePopupOpen) {
-      togglePostWritePopup();
-    }
+    togglePostWritePopup();
   };
+
+  const page = 1; // 예시로 1페이지를 설정
+  const limit = 10;
+
+  useEffect(() => {}, []);
+
   return (
     <div className="bg-white w-[100%] h-[65.2rem] rounded-[1.2rem] flex flex-col">
       <div className="flex justify-between items-center p-[2.4rem] border-b border-[0.1rem] border-[#EEEFF1]">

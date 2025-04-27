@@ -9,7 +9,7 @@ import PostWritePopup from './components/PostWritePopup';
 function App() {
   const { isLoggedIn } = useAuth();
   const { isPostWritePopupOpen } = useUiState();
-  console.log(isPostWritePopupOpen);
+
   return (
     <>
       <Header />

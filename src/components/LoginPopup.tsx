@@ -29,8 +29,9 @@ const LoginPopup = () => {
     const response = await loginApi(loginData);
 
     if (response.status === 201) {
+      const tokens = response.data.tokens;
+      login(tokens);
       alert('로그인이 완료되었습니다');
-      login();
     }
 
     setLoginId(``);
