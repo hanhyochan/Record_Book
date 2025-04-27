@@ -3,7 +3,7 @@ import PrimaryBtn from './common/button/PrimaryBtn';
 
 const LoginPopup = () => {
   return (
-    <div className="flex flex-col w-[45.4rem] min-h-[41.3rem] gap-[2rem] bg-white border-[0.1rem] border-[#EEEFF1] rounded-[1.2rem] px-[4rem] py-[3.2rem]">
+    <div className="flex flex-col w-[100%] px-[1.6rem] min-[642px]:w-[45.4rem] min-h-[41.3rem] gap-[2rem] bg-white border-[0.1rem] border-[#EEEFF1] rounded-[1.2rem] min-[642px]:px-[4rem] py-[3.2rem]">
       <div className="flex flex-col gap-[0.1rem]">
         <p className="text-[3.2rem] font-bold leading-[160%] tracking-[-1.5%]">
           안녕하세요 <br />

@@ -29,3 +29,9 @@ main {
   height: 100%;
   /* border: 1px solid #000000; */
 }
+
+@media (max-width: 461px) {
+  body {
+    background-color: #ffffff;
+  }
+}

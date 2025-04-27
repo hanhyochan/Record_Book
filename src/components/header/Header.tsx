@@ -7,7 +7,7 @@ const Header = () => {
   const isHamburgerMenuOpen = useUiState(state => state.isHamburgerMenuOpen);
   const toggleHamburgerMenu = useUiState(state => state.toggleHamburgerMenu);
   const setHamburgerMenuFalse = useUiState(state => state.setHamburgerMenuFalse);
-  console.log('dld', isHamburgerMenuOpen);
+
   // 화면 너비 감지 함수
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
