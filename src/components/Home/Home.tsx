@@ -12,7 +12,12 @@ const Home = () => {
             오신것을 환영합니다.
           </p>
         </div>
-        <CardContent />
+        <CardContent
+          imgName="img_1"
+          title="프린티"
+          subTitle="주식회사 프린티"
+          desc="작가와 팬을 잇는 일러스트 출력 플랫폼"
+        />
       </div>
     </div>
   );
