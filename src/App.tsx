@@ -1,12 +1,14 @@
 import './App.css';
-// import Header from './components/Header';
-import LoginPopup from './components/loginPopup';
+import Header from './components/header/Header';
+import LoginPopup from './components/LoginPopup';
 
 function App() {
   return (
     <>
-      {/* <Header /> */}
-      <LoginPopup />
+      <Header />
+      <main>
+        <LoginPopup />
+      </main>
     </>
   );
 }
