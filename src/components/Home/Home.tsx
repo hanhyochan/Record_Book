@@ -1,9 +1,12 @@
-import CardContent from './CardContent';
+import CardContent from '../common/CardContent';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { cardContentsData } from './CardContents';
 
-const Home = () => {
+const TestSwiper = () => {
   return (
-    <div className="w-[120rem] h-[57.2rem] flex flex-col justify-center items-center gap-18">
-      <div className="w-[100%] h-[100%] flex flex-col items-center gap-8">
+    <div className="w-[100%] h-[57.2rem] flex flex-col justify-center items-center gap-18">
+      <div className="w-full h-full flex flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-6">
           <p className="text-[1.8rem] font-bold text-[#5E616E]">다글제작소</p>
           <p className="text-[3.2rem] font-bold leading-[160%] tracking-[-1.5%] text-center">
@@ -12,15 +15,24 @@ const Home = () => {
             오신것을 환영합니다.
           </p>
         </div>
-        <CardContent
-          imgName="img_1"
-          title="프린티"
-          subTitle="주식회사 프린티"
-          desc="작가와 팬을 잇는 일러스트 출력 플랫폼"
-        />
+      </div>
+
+      <div className="w-[100%]">
+        <Swiper spaceBetween={25} slidesPerView={3} loop={true} grabCursor={true}>
+          {cardContentsData.map(card => (
+            <SwiperSlide style={{ flexShrink: 1 }} key={card.imgName}>
+              <CardContent
+                imgName={card.imgName}
+                title={card.title}
+                subTitle={card.subTitle}
+                desc={card.desc}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default TestSwiper;

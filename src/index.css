@@ -27,12 +27,19 @@ main {
   align-items: center;
   justify-content: center;
   height: 100%;
-  /* border: 1px solid #000000; */
+  padding: 10rem 12rem; /* 기본값: 1025px 이상일 때 */
 }
 
-// 모바일 배경 흰색으로 변환
-@media (max-width: 461px) {
-  body {
+/* 반응형 패딩 */
+@media (max-width: 1025px) {
+  main {
+    padding: 10rem 3rem;
+  }
+}
+
+@media (max-width: 642px) {
+  main {
     background-color: #ffffff;
+    padding: 1.6rem; /* 360px 미만일 때 */
   }
 }
