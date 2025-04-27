@@ -32,7 +32,7 @@ export const postApi = async (postData: { title: string; content: string }) => {
 };
 
 // 게시글 get 함수
-export const postGetApi = async (postData: { title: string; content: string }) => {
+export const postGetApi = async (page = 1, limit = 10) => {
   try {
     const authData = localStorage.getItem('tokens');
 
@@ -41,19 +41,20 @@ export const postGetApi = async (postData: { title: string; content: string }) =
     }
 
     const parsedAuthData = JSON.parse(authData);
-
     const accessToken = parsedAuthData.accessToken;
 
     if (!accessToken) {
       throw new Error('accessToken이 존재하지 않습니다.');
     }
 
-    const response = await axios.post('https://api.daggle.io/api/posts', postData, {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`,
+    const response = await axios.get(
+      `https://api.daggle.io/api/posts?page=${page}&limit=${limit}`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
       },
-    });
+    );
     return response;
   } catch (error) {
     console.error('API 요청 에러:', error);

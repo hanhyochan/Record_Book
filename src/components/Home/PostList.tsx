@@ -1,6 +1,7 @@
 import WriteBtn from '../common/button/WriteBtn';
 import useUiState from '../../store/useUiState';
 import { useEffect } from 'react';
+import { postGetApi } from '../../api/post';
 
 const PostList = () => {
   const togglePostWritePopup = useUiState(state => state.togglePostWritePopup);
@@ -9,10 +10,36 @@ const PostList = () => {
     togglePostWritePopup();
   };
 
-  const page = 1; // 예시로 1페이지를 설정
-  const limit = 10;
+  useEffect(() => {
+    const fetchAllPosts = async () => {
+      let page = 1;
+      const limit = 10;
+      console.log(page);
+      while (true) {
+        try {
+          const response = await postGetApi(page, limit);
+          console.log(response);
+          // 여기 res값을 가공해서 객체형태로 만든후 map돌려서 똑같은 놈들 만들고 페이지네이션 ㄱ
+          const posts = response.data?.posts || response.data || [];
 
-  useEffect(() => {}, []);
+          if (!posts.length) {
+            console.log(`페이지 ${page}: 데이터 없음. 요청 종료.`);
+            break;
+          }
+
+          console.log(`페이지 ${page}: ${posts.length}개 데이터 가져옴.`);
+
+          // 다음 페이지
+          page++;
+        } catch (error) {
+          console.error(`페이지 ${page} 요청 중 에러 발생:`, error);
+          break; // 에러 발생하면 루프 중단
+        }
+      }
+    };
+
+    fetchAllPosts();
+  }, []);
 
   return (
     <div className="bg-white w-[100%] h-[65.2rem] rounded-[1.2rem] flex flex-col">
