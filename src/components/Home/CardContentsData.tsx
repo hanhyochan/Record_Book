@@ -1,4 +1,4 @@
-export const cardContentsData = [
+export const CardContentsData = [
   {
     imgName: 'img_1',
     title: '프린티',
@@ -22,5 +22,11 @@ export const cardContentsData = [
     title: '달콤수학',
     subTitle: '달콤교육',
     desc: '엄마표 온라인 수학교육 강의 플랫폼',
+  },
+  {
+    imgName: 'img_2',
+    title: '스파르타빌더스',
+    subTitle: '팀스파르타',
+    desc: '물류관계자 비교견적 솔루션',
   },
 ];

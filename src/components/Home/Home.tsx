@@ -1,7 +1,4 @@
-import CardContent from '../common/CardContent';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { cardContentsData } from './CardContents';
+import CardContentsSwiper from './CardContentsSwiper';
 
 const TestSwiper = () => {
   return (
@@ -17,20 +14,7 @@ const TestSwiper = () => {
         </div>
       </div>
 
-      <div className="w-[100%]">
-        <Swiper spaceBetween={25} slidesPerView={3} loop={true} grabCursor={true}>
-          {cardContentsData.map(card => (
-            <SwiperSlide style={{ flexShrink: 1 }} key={card.imgName}>
-              <CardContent
-                imgName={card.imgName}
-                title={card.title}
-                subTitle={card.subTitle}
-                desc={card.desc}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <CardContentsSwiper />
     </div>
   );
 };
