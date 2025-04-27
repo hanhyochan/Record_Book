@@ -28,7 +28,7 @@ const Input = ({ purpose: Purpose = 'idInput', placeholder }: InputProps) => {
     <>
       <div className="flex flex-col gap-[1rem]">
         <input
-          className="w-[100%] h-[4.8rem] border border-solid border-[#eeeff1] rounded-[0.1rem] px-[1.2rem] py-[1.6rem]"
+          className="w-[100%] h-[4.8rem] border border-solid border-[#eeeff1] rounded-[0.8rem] px-[1.2rem] py-[1.6rem] placeholder-[#C8C9D0]"
           type={determineInputType(Purpose)}
           value={value}
           onChange={handleChange}

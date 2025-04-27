@@ -1,10 +1,12 @@
 import './App.css';
-import Header from './components/Header';
+// import Header from './components/Header';
+import LoginPopup from './components/loginPopup';
 
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <LoginPopup />
     </>
   );
 }
