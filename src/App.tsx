@@ -1,13 +1,13 @@
 import './App.css';
 import Header from './components/header/Header';
-import LoginPopup from './components/LoginPopup';
+import PostPopup from './components/PostPopup';
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <LoginPopup />
+        <PostPopup />
       </main>
     </>
   );

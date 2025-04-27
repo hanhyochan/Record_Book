@@ -30,6 +30,7 @@ main {
   /* border: 1px solid #000000; */
 }
 
+// 모바일 배경 흰색으로 변환
 @media (max-width: 461px) {
   body {
     background-color: #ffffff;
