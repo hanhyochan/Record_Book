@@ -1,0 +1,51 @@
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'pretendard', sans-serif;
+  background-color: #f9fafa;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100%; */
+  padding: 7rem 12rem; /* 기본값: 1025px 이상일 때 */
+}
+
+/* 반응형 패딩 */
+@media (max-width: 1025px) {
+  main {
+    padding: 7rem 3rem;
+  }
+}
+
+@media (max-width: 642px) {
+  main {
+    background-color: #ffffff;
+    padding: 1.6rem; /* 360px 미만일 때 */
+  }
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem; /* 항목 간격 */
+}
