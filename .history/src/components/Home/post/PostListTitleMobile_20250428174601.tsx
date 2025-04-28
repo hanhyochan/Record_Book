@@ -50,7 +50,7 @@ const PostListTitleMobile = ({ postListContents, loading }: PostListTitleMobileP
           <div
             onClick={() => openPostDetailPopup(post.id)}
             key={`${post.id}-${index}`}
-            className="flex items-center justify-between h-[8rem] border-b-[0.1rem] border-[#EEEFF1] cursor-pointer"
+            className="flex items-center justify-between h-[8rem] border-b-[0.1rem] border-[#EEEFF1]"
           >
             <div className="flex flex-col gap-[1rem]">
               <p className="text-[1.6rem] font-bold leading-[160%] tracking-[-0.3%]">

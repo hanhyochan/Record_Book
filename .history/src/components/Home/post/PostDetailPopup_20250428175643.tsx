@@ -32,7 +32,6 @@ const PostDetailPopup = () => {
 
   return (
     <>
-      // 게시글조회팝업닫는 zustand 함수 연결
       <div className="flex items-center w-[100%] h-[6rem] px-[1rem]">
         <button>
           <img

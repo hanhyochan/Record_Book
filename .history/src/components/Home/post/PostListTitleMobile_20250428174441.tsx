@@ -1,7 +1,6 @@
 import { postType } from '../../../types/post';
 import useUiState from '../../../store/useUiState';
 import WriteBtnMobile from '../../common/button/WriteBtnMobile';
-import { postDetailGetApi } from '../../../api/post';
 
 interface PostListTitleMobileProps {
   postListContents: postType[];
@@ -10,8 +9,6 @@ interface PostListTitleMobileProps {
 
 const PostListTitleMobile = ({ postListContents, loading }: PostListTitleMobileProps) => {
   const togglePostWritePopup = useUiState(state => state.togglePostWritePopup);
-  const togglePostDetailPopup = useUiState(state => state.togglePostDetailPopup);
-  const setPostDetailContents = useUiState(state => state.setPostDetailContents);
 
   // 게시글 작성 팝업 오픈
   const openWritePopup = () => {
@@ -50,7 +47,7 @@ const PostListTitleMobile = ({ postListContents, loading }: PostListTitleMobileP
           <div
             onClick={() => openPostDetailPopup(post.id)}
             key={`${post.id}-${index}`}
-            className="flex items-center justify-between h-[8rem] border-b-[0.1rem] border-[#EEEFF1] cursor-pointer"
+            className="flex items-center justify-between h-[8rem] border-b-[0.1rem] border-[#EEEFF1]"
           >
             <div className="flex flex-col gap-[1rem]">
               <p className="text-[1.6rem] font-bold leading-[160%] tracking-[-0.3%]">

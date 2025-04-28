@@ -32,18 +32,6 @@ const PostDetailPopup = () => {
 
   return (
     <>
-      // 게시글조회팝업닫는 zustand 함수 연결
-      <div className="flex items-center w-[100%] h-[6rem] px-[1rem]">
-        <button>
-          <img
-            src="/icon/back.svg"
-            alt="뒤로가기"
-            width="6"
-            height="12"
-            className="cursor-pointer"
-          />
-        </button>
-      </div>
       <div className="w-[100%] h-[100%] flex flex-col bg-white border-[0.1rem] border-[#EEEFF1] rounded-[1.2rem]">
         <div className="h-[12.4rem] p-[2.4rem] flex flex-col gap-[2rem] border-b border-b-[0.1rem] border-[#EEEFF1]">
           <p className="text-[2.4rem] font-bold leading-[160%] tracking-[-0.3%]">
