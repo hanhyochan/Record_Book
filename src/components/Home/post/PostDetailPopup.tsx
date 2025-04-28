@@ -2,12 +2,12 @@ import useUiState from '../../../store/useUiState';
 import { useState, useEffect } from 'react';
 import { postDetailType } from '../../../types/post';
 import Input from '../../common/input/Input';
-import useWindowWidth from '../../../hooks/useWindowWidth';
+import PrimaryBtn from '../../common/button/PrimaryBtn';
 
 const PostDetailPopup = () => {
   const { postDetailContents } = useUiState();
   const [postDetail, setPostDetail] = useState<postDetailType | null>(null);
-  const windowWidth = useWindowWidth();
+  const [comment, setComment] = useState('');
 
   useEffect(() => {
     if (postDetailContents) {
@@ -24,17 +24,10 @@ const PostDetailPopup = () => {
     return `${year}.${month}.${day}`;
   };
 
-  useEffect(() => {
-    if (windowWidth > 642) {
-      // 조건 만족할 경우 상단에 div 공간넣고 그 안에'<'모양 버튼 왼쪽 정렬된거 만들어줘
-    }
-  }, [windowWidth]);
-
   return (
     <>
-      // 게시글조회팝업닫는 zustand 함수 연결
       <div className="flex items-center w-[100%] h-[6rem] px-[1rem]">
-        <button>
+        {/* <button>
           <img
             src="/icon/back.svg"
             alt="뒤로가기"
@@ -42,10 +35,10 @@ const PostDetailPopup = () => {
             height="12"
             className="cursor-pointer"
           />
-        </button>
+        </button> */}
       </div>
       <div className="w-[100%] h-[100%] flex flex-col bg-white border-[0.1rem] border-[#EEEFF1] rounded-[1.2rem]">
-        <div className="h-[12.4rem] p-[2.4rem] flex flex-col gap-[2rem] border-b border-b-[0.1rem] border-[#EEEFF1]">
+        <div className="h-[12.4rem] p-[2.4rem] flex flex-col gap-[2rem] border-b-[0.1rem] border-[#EEEFF1]">
           <p className="text-[2.4rem] font-bold leading-[160%] tracking-[-0.3%]">
             {postDetail?.title}
           </p>
@@ -80,8 +73,19 @@ const PostDetailPopup = () => {
           </div>
           <div className="text-[1.4rem] text-[#A7A9B4] mb-[2rem]">{formatDate('2024-06-12')}</div>
         </div>
-        <div className="p-[2.4rem] border-b-[0.1rem] border-[#EEEFF1] bg-white">
-          <Input purpose="commentInput" placeholder="댓글을 통해 자유롭게 의견을 나눠보세요." />
+        <div className="flex justify-between p-[2.4rem] border-b-[0.1rem] border-[#EEEFF1] bg-white">
+          <div className="w-[92%]">
+            <Input
+              purpose="commentInput"
+              value={comment}
+              onChange={e => {
+                console.log('댓글 작성 함수 실행');
+                setComment(e.target.value);
+              }}
+              placeholder="댓글을 통해 자유롭게 의견을 나눠보세요."
+            />
+          </div>
+          <PrimaryBtn size="primaryBtnSm">등록</PrimaryBtn>
         </div>
         {/* 구분 */}
       </div>
