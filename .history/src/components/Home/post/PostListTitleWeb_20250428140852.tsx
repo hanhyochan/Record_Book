@@ -19,16 +19,9 @@ const PostListTitleWeb = ({
   setCurrentPage,
 }: PostListTitleWebProps) => {
   const togglePostWritePopup = useUiState(state => state.togglePostWritePopup);
-  const togglePostDetailPopup = useUiState(state => state.togglePostDetailPopup);
 
-  // 게시글 작성 팝업 오픈
-  const openWritePopup = () => {
+  const openWriteModal = () => {
     togglePostWritePopup();
-  };
-
-  // 게시글 조회 팝업 오픈
-  const openPostDetailPopup = () => {
-    togglePostDetailPopup();
   };
 
   // 날짜 포맷 함수
@@ -45,13 +38,12 @@ const PostListTitleWeb = ({
       <div className="bg-white w-[100%] h-[100%] rounded-[1.2rem] flex flex-col">
         <div className="flex justify-between items-center p-[2.4rem] border-b border-[0.1rem] border-[#EEEFF1]">
           <p className="text-[2rem] font-bold leading-[160%] tracking-[-0.3%]">게시판</p>
-          <WriteBtn onClick={openWritePopup}>글쓰기</WriteBtn>
+          <WriteBtn onClick={openWriteModal}>글쓰기</WriteBtn>
         </div>
         {postListContents.map((post, index) => (
           <div
-            onClick={openPostDetailPopup}
             key={`${post.id}-${index}`}
-            className="flex items-center justify-between h-[5.9rem] px-[1.6rem] py-[2.4rem] border-b border-[0.1rem] border-[#EEEFF1] cursor-pointer"
+            className="border flex items-center justify-between h-[5.9rem] px-[1.6rem] py-[2.4rem] border-b border-[0.1rem] border-[#EEEFF1]"
           >
             <div className="w-[80%] h-[100%] flex items-center">
               <p className="truncate">{post.title}</p>

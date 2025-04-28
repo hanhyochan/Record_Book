@@ -19,16 +19,9 @@ const PostListTitleWeb = ({
   setCurrentPage,
 }: PostListTitleWebProps) => {
   const togglePostWritePopup = useUiState(state => state.togglePostWritePopup);
-  const togglePostDetailPopup = useUiState(state => state.togglePostDetailPopup);
 
-  // 게시글 작성 팝업 오픈
   const openWritePopup = () => {
     togglePostWritePopup();
-  };
-
-  // 게시글 조회 팝업 오픈
-  const openPostDetailPopup = () => {
-    togglePostDetailPopup();
   };
 
   // 날짜 포맷 함수

@@ -1,3 +1,4 @@
+import useUiState from '../../../store/useUiState';
 import { useEffect, useState } from 'react';
 import { postGetApi } from '../../../api/post';
 import PostListTitleWeb from './PostListTitleWeb';
@@ -6,6 +7,7 @@ import useWindowWidth from '../../../hooks/useWindowWidth';
 import PostListTitleMobile from './PostListTitleMobile';
 
 const PostList = () => {
+  const togglePostWritePopup = useUiState(state => state.togglePostWritePopup);
   const [postListContents, setPostListContents] = useState<postType[]>([]);
   const [totalItemCount, setTotalItemCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);

@@ -10,7 +10,7 @@ interface PostListTitleMobileProps {
 const PostListTitleMobile = ({ postListContents, loading }: PostListTitleMobileProps) => {
   const togglePostWritePopup = useUiState(state => state.togglePostWritePopup);
 
-  const openWritePopup = () => {
+  const openWriteModal = () => {
     togglePostWritePopup();
   };
 
@@ -25,7 +25,7 @@ const PostListTitleMobile = ({ postListContents, loading }: PostListTitleMobileP
 
   return (
     <>
-      <WriteBtnMobile onClick={openWritePopup} className="fixed bottom-[5rem] right-[3rem]">
+      <WriteBtnMobile onClick={openWriteModal} className="fixed bottom-[5rem] right-[3rem]">
         <img src="/icon/Pencil.svg" alt="연필 아이콘" width="24" height="24" />
       </WriteBtnMobile>
       <div className="w-[100%] h-[100%] flex flex-col">

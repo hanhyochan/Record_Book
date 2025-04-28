@@ -12,7 +12,6 @@ const Header = () => {
   // 로그인 여부
   const { isLoggedIn } = useAuth();
   const setPostWritePopupFalse = useUiState(state => state.setPostWritePopupFalse);
-  const setPostDetailPopupFalse = useUiState(state => state.setPostDetailPopupFalse);
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
@@ -26,7 +25,6 @@ const Header = () => {
 
   const navigateToHome = () => {
     setPostWritePopupFalse();
-    setPostDetailPopupFalse();
   };
 
   return (

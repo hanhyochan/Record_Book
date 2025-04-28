@@ -28,7 +28,7 @@ const PostListTitleWeb = ({
 
   // 게시글 조회 팝업 오픈
   const openPostDetailPopup = () => {
-    togglePostDetailPopup();
+    togglePostWritePopup();
   };
 
   // 날짜 포맷 함수
