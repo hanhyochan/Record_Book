@@ -15,6 +15,10 @@ const PostList = () => {
   const windowWidth = useWindowWidth();
   const itemsPerPage = 10;
 
+  const openWriteModal = () => {
+    togglePostWritePopup();
+  };
+
   const fetchPosts = async () => {
     if (loading) return;
     setLoading(true);

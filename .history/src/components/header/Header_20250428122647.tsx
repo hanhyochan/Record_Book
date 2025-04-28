@@ -13,7 +13,7 @@ const Header = () => {
   const { isLoggedIn } = useAuth();
   const setPostWritePopupFalse = useUiState(state => state.setPostWritePopupFalse);
   const windowWidth = useWindowWidth();
-
+  console.log(isHamburgerMenuOpen);
   useEffect(() => {
     if (windowWidth > 642 && isHamburgerMenuOpen) {
       setHamburgerMenuFalse();

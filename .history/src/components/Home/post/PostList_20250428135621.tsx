@@ -1,10 +1,13 @@
+import WriteBtn from '../../common/button/WriteBtn';
 import useUiState from '../../../store/useUiState';
 import { useEffect, useState } from 'react';
 import { postGetApi } from '../../../api/post';
 import PostListTitleWeb from './PostListTitleWeb';
+import PostListTitleMobile from './PostListTitleMobile';
+import ReactPaginate from 'react-js-pagination';
 import { postType } from '../../../types/post';
 import useWindowWidth from '../../../hooks/useWindowWidth';
-import PostListTitleMobile from './PostListTitleMobile';
+import WriteBtnMobile from '../../common/button/WriteBtnMobile';
 
 const PostList = () => {
   const togglePostWritePopup = useUiState(state => state.togglePostWritePopup);
@@ -14,6 +17,10 @@ const PostList = () => {
   const [loading, setLoading] = useState(false);
   const windowWidth = useWindowWidth();
   const itemsPerPage = 10;
+
+  const openWriteModal = () => {
+    togglePostWritePopup();
+  };
 
   const fetchPosts = async () => {
     if (loading) return;
@@ -66,7 +73,13 @@ const PostList = () => {
           setCurrentPage={setCurrentPage}
         />
       ) : (
-        <PostListTitleMobile postListContents={postListContents} loading={loading} />
+        <WriteBtnMobile
+          postListContents={postListContents}
+          currentPage={currentPage}
+          itemsPerPage={itemsPerPage}
+          totalItemCount={totalItemCount}
+          setCurrentPage={setCurrentPage}
+        />
       )}
     </>
   );

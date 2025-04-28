@@ -15,7 +15,7 @@ const Header = () => {
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
-    if (windowWidth > 642 && isHamburgerMenuOpen) {
+    if (windowWidth < 642 && isHamburgerMenuOpen) {
       setHamburgerMenuFalse();
     }
   }, [windowWidth, isHamburgerMenuOpen, setHamburgerMenuFalse]);
