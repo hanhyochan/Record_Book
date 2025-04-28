@@ -36,6 +36,7 @@ const LoginPopup = () => {
 
     setLoginId(``);
     setPassword(``);
+    console.log(response);
   };
 
   return (

@@ -1,5 +1,5 @@
-import CardContentsSwiper from './cardContent/CardContentsSwiper';
-import PostList from './post/PostList';
+import CardContentsSwiper from './CardContentsSwiper';
+import PostList from './PostList';
 
 const TestSwiper = () => {
   return (
